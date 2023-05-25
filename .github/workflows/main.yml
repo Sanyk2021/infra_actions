@@ -58,6 +58,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             sudo docker pull sanyk2021/infra_actions
-            sudo docker stop #(sudo docker ps -a -q)
+            sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 5000:5000 sanyk2021/infra-actions
         
